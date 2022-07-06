@@ -1,5 +1,67 @@
 extends layout
 
+block stylesheet
+  link(rel='stylesheet', href='/stylesheets/index.css')
+
 block content
-  h1= title
-  p Welcome to #{title}
+  body
+    header 
+      h1.title= title
+    img.banner(src="/images/index/banner.png", alt="banner")
+    a.loginLink(href="/user/login")
+      img.profile(src="/images/index/profile.png", alt="profile")
+      p 로그인해주세요
+      img.arrow(src="/images/index/arrow.png", alt="arrow")
+    nav.navGrid
+      ul
+        li
+          a(href="#") 
+            img(src="/images/index/point.png", alt="point")
+            span 포인트
+        li
+          a(href="#") 
+            img(src="/images/index/coupon.png", alt="coupon")
+            span 쿠폰함
+        li
+          a(href="#") 
+            img(src="/images/index/present.png", alt="present")
+            span 선물함
+        li
+          a(href="#") 
+            img(src="/images/index/heart.png", alt="heart")
+            span 찜
+        li
+          a(href="#") 
+            img(src="/images/index/order.png", alt="order")
+            span 주문내역
+        li
+          a(href="#") 
+            img(src="/images/index/review.png", alt="review")
+            span 리뷰관리
+    a.campaign(href="#")
+      img.sproud(src="/images/index/sproud.png", alt="sproud")
+      p 일회용품 덜 쓰기, 함깨해요!
+      img.arrow(src="/images/index/arrow.png", alt="arrow")
+    ul.toolsLink 
+      li 
+        a(href="#") 
+          div
+            span 배민페이 등록
+            img(src="/images/index/new.png", alt="new")
+            div 배민페이로 결제하면 최대 5.5% 배민포인트가 적립됩니다!
+          img.arrow(src="/images/index/arrow.png", alt="arrow")
+      li
+        a(href="#") 
+          div
+            span 가족계정 관리
+            img(src="/images/index/new.png", alt="new")
+            div 결제수단을 공유해 우리 가족의 끼니를 챙겨주세요.
+          img.arrow(src="/images/index/arrow.png", alt="arrow")
+      li 
+        a(href="#") 
+          div 공지사항
+          img.arrow(src="/images/index/arrow.png", alt="arrow")
+      li 
+        a(href="#") 
+          div 배민커넥트 지원
+          img.arrow(src="/images/index/arrow.png", alt="arrow")
