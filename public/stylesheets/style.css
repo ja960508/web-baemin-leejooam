@@ -1,6 +1,7 @@
 :root {
   --baemin-mint: #2ac1bc;
   --baemin-gray: #d7d7d7;
+  --baemin-light-gray: #f6f6f6;
   --baemin-font-gray: rgb(147, 146, 146);
   --baemin-red: #da0d0d;
 }
@@ -33,4 +34,31 @@ a {
   font-size: 1.2rem;
   font-weight: bold;
   border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.arrow {
+  height: 15px;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.header__right-link {
+  position: absolute;
+  left: 1rem;
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-image: url('../images/login/cancel.svg');
+}
+
+.header__title {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: bold;
 }
