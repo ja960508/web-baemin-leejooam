@@ -14,4 +14,8 @@ router.get('/terms-and-conditions', function (req, res, next) {
   res.render('terms_and_conditions');
 });
 
+router.get('/phone-number-check', function (req, res, next) {
+  res.render('phone_number_check');
+});
+
 module.exports = router;
