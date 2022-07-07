@@ -1,40 +1,40 @@
-.login-wrapper {
+.login__wrapper {
   display: flex;
   flex-direction: column;
   height: 100vh;
   padding: 1rem 1rem 3rem;
 }
 
-.loginForm {
+.login__form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   flex: 1 1 100%;
 }
 
-.loginForm input {
+.login__form input {
   outline: none;
   border: none;
   width: 100%;
   padding: 0.5rem 0;
-  border-bottom: 1px solid #d7d7d7;
+  border-bottom: 1px solid var(--baemin-gray);
   margin-bottom: 0.75rem;
 }
 
-.loginForm button {
+.login__form button {
   width: 100%;
   margin: 1.5rem 0 0.5rem;
 }
 
-.loginForm .error {
-  font-size: 0.8rem;
+.login__form .error {
+  font-size: var(--small-font-size);
   color: var(--baemin-red);
   margin-bottom: 0.75rem;
 }
 
-.loginForm .idError,
-.loginForm .passwordError,
-.loginForm .loginError {
+.login__form .idError,
+.login__form .passwordError,
+.login__form .loginError {
   display: none;
 }
 
@@ -47,7 +47,7 @@
 
 .auth-helper a {
   color: var(--baemin-font-gray);
-  font-size: 0.9rem;
+  font-size: var(--small-font-size);
 }
 
 .auth-helper .divider {
@@ -62,9 +62,9 @@
 }
 
 .social-login__container li button {
-  background-color: white;
   display: flex;
   align-items: center;
+  background-color: white;
   width: 100%;
   border: 2px solid var(--baemin-gray);
   border-radius: 0.5rem;
@@ -72,14 +72,14 @@
 }
 
 .social-login__container li button img {
-  width: 16px;
+  width: var(--small-img-size);
   margin-right: 1rem;
 }
 
 .register-guide {
   text-align: center;
   color: var(--baemin-font-gray);
-  font-size: 0.8rem;
+  font-size: var(--small-font-size);
 }
 
 .register-guide a {
