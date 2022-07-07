@@ -8,10 +8,16 @@ block content
     header 
       h1.title= title
     img.banner(src="/images/index/banner.png", alt="banner")
-    a.loginLink(href="/user/login")
-      img.profile(src="/images/index/profile.png", alt="profile")
-      p 로그인해주세요
-      img.arrow(src="/images/index/arrow.png", alt="arrow")
+    if user
+      a.loginLink(href="#")
+        img.profile(src="/images/index/profile.png", alt="profile")
+        p #{user}님 환영합니다. 
+        img.arrow(src="/images/index/arrow.png", alt="arrow")
+    else
+      a.loginLink(href="/users/login")
+        img.profile(src="/images/index/profile.png", alt="profile")
+        p 로그인해주세요
+        img.arrow(src="/images/index/arrow.png", alt="arrow")
     nav.navGrid
       ul
         li

@@ -1,0 +1,40 @@
+extends layout
+
+block scripts 
+  script(type="module" src="/javascripts/login.js" defer) 
+
+block stylesheet
+  link(rel='stylesheet', href='/stylesheets/login.css')
+
+block content 
+  body
+    div.login-wrapper
+      header.header
+        a.header__close-link(href="/")
+        h2.header__title 로그인
+      form.loginForm
+        input(name="userId" type="text" placeholder="아이디 또는 이메일" autocomplete='off') 
+        div.error.idError 올바른 아이디를 입력해주세요.
+        input(name="password" type="password" placeholder="비밀번호")
+        div.error.passwordError 올바른 비밀번호를 입력해주세요.
+        button.baemin-btn--primary(type="submit") 로그인
+        div.error.loginError 로그인에 실패했습니다.
+        div.auth-helper 
+          a(href="#") 아이디 찾기
+          div.divider
+          a(href="#") 비밀번호 찾기
+      ul.social-login__container
+        li 
+          button 
+            img(src="/images/login/facebook.svg", alt="facebook_logo")
+            span 페이스북으로 로그인
+        li 
+          button 
+            img(src="/images/login/naver-logo.svg", alt="naver_logo")
+            span 네이버로 로그인
+        li 
+          button 
+            img(src="/images/login/apple-logo.svg", alt="apple-logo")
+            span Apple로 로그인
+      p.register-guide 혹시 배달의 민족이 처음이신가요? 
+        a(href="/users/register") 회원가입
