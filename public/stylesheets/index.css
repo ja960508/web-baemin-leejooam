@@ -28,10 +28,6 @@
   margin-right: 0.5rem;
 }
 
-.arrow {
-  height: 15px;
-}
-
 .navGrid ul {
   display: grid;
   grid-template-rows: repeat(2, 1fr);
