@@ -1,12 +1,18 @@
 extends layout
 
+mixin gridElement(text, src, alt)
+  li
+    a(href="#") 
+      img(src=src, alt=alt)
+      span=text
+
 block stylesheet
   link(rel='stylesheet', href='/stylesheets/index.css')
 
 block content
   body
-    header 
-      h1.title= title
+    header.header 
+      h1.header__title= title
     img.banner(src="/images/index/banner.png", alt="banner")
     if user
       a.loginLink(href="#")
@@ -20,35 +26,19 @@ block content
         img.arrow(src="/images/index/arrow.png", alt="arrow")
     nav.navGrid
       ul
-        li
-          a(href="#") 
-            img(src="/images/index/point.png", alt="point")
-            span 포인트
-        li
-          a(href="#") 
-            img(src="/images/index/coupon.png", alt="coupon")
-            span 쿠폰함
-        li
-          a(href="#") 
-            img(src="/images/index/present.png", alt="present")
-            span 선물함
-        li
-          a(href="#") 
-            img(src="/images/index/heart.png", alt="heart")
-            span 찜
-        li
-          a(href="#") 
-            img(src="/images/index/order.png", alt="order")
-            span 주문내역
-        li
-          a(href="#") 
-            img(src="/images/index/review.png", alt="review")
-            span 리뷰관리
-    a.campaign(href="#")
-      img.sproud(src="/images/index/sproud.png", alt="sproud")
-      p 일회용품 덜 쓰기, 함깨해요!
-      img.arrow(src="/images/index/arrow.png", alt="arrow")
+        +gridElement("포인트", "/images/index/point.png", "point")
+        +gridElement("쿠폰함", "/images/index/coupon.png", "coupon")
+        +gridElement("선물함", "/images/index/present.png", "present")
+        +gridElement("찜", "/images/index/heart.png", "heart")
+        +gridElement("주문내역", "/images/index/order.png", "order")
+        +gridElement("리뷰관리", "/images/index/review.png", "review")
+
     ul.toolsLink 
+      li.campaign 
+        a(href="#")
+          img.sproud(src="/images/index/sproud.png", alt="sproud")
+          p 일회용품 덜 쓰기, 함께해요!
+          img.arrow(src="/images/index/arrow.png", alt="arrow")
       li 
         a(href="#") 
           div

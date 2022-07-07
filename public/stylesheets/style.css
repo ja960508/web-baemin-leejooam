@@ -1,9 +1,19 @@
+/* reset */
+
 :root {
   --baemin-mint: #2ac1bc;
   --baemin-gray: #d7d7d7;
   --baemin-light-gray: #f6f6f6;
   --baemin-font-gray: rgb(147, 146, 146);
   --baemin-red: #da0d0d;
+
+  --large-img-size: 3rem;
+  --middle-img-size: 2rem;
+  --small-img-size: 1rem;
+
+  --large-font-size: 1rem;
+  --middle-font-size: 1rem;
+  --small-font-size: 0.8rem;
 }
 
 * {
@@ -25,6 +35,8 @@ a {
   text-decoration: none;
 }
 
+/* button */
+
 .baemin-btn--primary {
   color: white;
   background-color: var(--baemin-mint);
@@ -38,8 +50,10 @@ a {
 }
 
 .arrow {
-  height: 15px;
+  height: 16px;
 }
+
+/* header */
 
 .header {
   display: flex;
@@ -59,6 +73,6 @@ a {
 
 .header__title {
   margin: 0;
-  font-size: 1rem;
+  font-size: var(--large-font-size);
   font-weight: bold;
 }
