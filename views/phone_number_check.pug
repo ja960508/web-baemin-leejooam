@@ -1,0 +1,26 @@
+extends layout 
+
+block stylesheet
+  link(rel="stylesheet", href="/stylesheets/phone_number_check.css")
+
+block scripts 
+    script(type="module" src="/javascripts/phone_number_check.js" defer)
+
+block content 
+  body 
+    header.header
+      a.header__right-link(href="/")
+      h2.header__title 회원가입
+    form.phone-number-form
+      div.check__container
+        label(for="phone-number") 휴대전화
+        div.phone-number
+          input(id="phone-number" type="text" placeholder="휴대전화 번호를 입력해주세요") 
+          div.cancle-btn
+          div.check
+      div.check__container.auth-number
+        label(for="auth-number") 인증번호
+        input(id="auth-number" type="text" placeholder="인증번호를 입력해주세요" readonly)
+        div.auth-number__request-re 인증번호 다시 받기
+      button.auth-number__request(type="button") 인증번호 받기
+      button.baemin-btn--primary.next-btn(type="submit") 다음
