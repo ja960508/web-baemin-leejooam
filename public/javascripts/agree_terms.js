@@ -1,5 +1,5 @@
 (function () {
-  const agreeAllInput = document.querySelector('.agreeAll input');
+  const agreeAllInput = document.querySelector('.agree--all input');
   const agreeTermsInput = document.querySelectorAll('.agree input');
   const essentialInputs = document.querySelectorAll('.essential input');
   const nextBtn = document.querySelector('.next-btn');

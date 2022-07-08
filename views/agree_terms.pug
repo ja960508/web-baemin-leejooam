@@ -1,16 +1,21 @@
 extends layout 
 
 mixin checkInput(id, className, text)
-  div(class=`checkbox__container ${className}`)
-    input(type="checkbox" id=id)
-    label(for=id)= text
-    img.arrow(src="/images/terms_and_conditions/right-arrow.svg", alt="right-arrow")
+  if className.includes('agree--all')
+    div(class=`checkbox__container ${className}`)
+          input(type="checkbox" id=id)
+          label(for=id)=text
+  else
+    div(class=`checkbox__container ${className}`)
+      input(type="checkbox" id=id)
+      label(for=id)= text
+      img.arrow(src="/images/terms_and_conditions/right-arrow.svg", alt="right-arrow")
 
 block stylesheet
-  link(rel="stylesheet", href="/stylesheets/terms_and_conditions.css")
+  link(rel="stylesheet", href="/stylesheets/agree_terms.css")
 
 block scripts 
-    script(src="/javascripts/terms_and_conditions.js" defer)
+    script(src="/javascripts/agree_terms.js" defer)
 
 block content 
   body 
@@ -18,17 +23,14 @@ block content
       a.header__right-link(href="/")
       h2.header__title 회원가입
     p.guide-ment 어서오세요
-      br
     p.guide-ment 약관 동의가 필요해요.
-    form.terms-form
-      div.checkbox__container.agreeAll
-        input(type="checkbox" id="agreeAll")
-        label(for="agreeAll") 전체동의
+    form.agree-terms__form
+      +checkInput("agreeAll", "agree--all", "전체동의")
       +checkInput("baemin", "agree essential", "배달의 민족 이용약관 동의")
       +checkInput("fintech", "agree essential", "전자금융거래 이용약관 동의")
       +checkInput("personalInfo", "agree essential", "개인정보 수집이용 동의")
       +checkInput("personalInfoToThirdParty", "agree option", "개인정보 제3자 제공 동의(선택)")
-      +checkInput("marketing", "agree option last-check", "마케팅 정보 메일, SMS 수신동의(선택)")
+      +checkInput("marketing", "agree option agree--last", "마케팅 정보 메일, SMS 수신동의(선택)")
       label.age-select__container
         input(type="radio" name="age" id="age" checked=true)
         p 만 14세 이상입니다.

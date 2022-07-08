@@ -10,11 +10,11 @@ router.get('/login', function (req, res, next) {
   res.render('login');
 });
 
-router.get('/terms-and-conditions', function (req, res, next) {
-  res.render('terms_and_conditions');
+router.get('/register/agree-terms', function (req, res, next) {
+  res.render('agree_terms');
 });
 
-router.get('/phone-number-check', function (req, res, next) {
+router.get('/register/check-phone-number', function (req, res, next) {
   res.render('phone_number_check');
 });
 
