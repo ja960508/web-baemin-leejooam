@@ -5,7 +5,7 @@
 .loginLink {
   display: flex;
   align-items: center;
-  padding: 0 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .loginLink p {
@@ -42,20 +42,21 @@
   color: var(--baemin-font-gray);
 }
 
-.campaign {
+.toolsLink li.campaign {
   background-color: var(--baemin-light-gray);
 }
 
-.campaign .sproud {
+.toolsLink li.campaign .sproud {
   width: var(--middle-img-size);
   margin-right: 4px;
 }
 
-.campaign a {
+.toolsLink li.campaign a {
   background-color: white;
+  padding: 0.5rem 1rem;
 }
 
-.campaign p {
+.toolsLink li.campaign p {
   flex: 1 1 100%;
   color: rgb(21, 155, 21);
 }
