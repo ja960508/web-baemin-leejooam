@@ -1,40 +1,40 @@
-.phone-number-form {
+.check-phone-number__form {
   display: flex;
   flex-direction: column;
   padding: 1rem;
 }
 
-.check__container {
+.input__container {
   display: flex;
   flex-direction: column;
 }
 
-.check__container label {
+.input__container label {
   margin-bottom: 1rem;
 }
 
-.check__container input {
+.input__container input {
   padding: 0.5rem 0;
-  margin-bottom: 1rem;
   border: none;
   outline: none;
-  border-bottom: 1px solid var(--baemin-gray);
 }
 
-.check__container.auth-number {
+.input__container.auth-number {
   display: none;
 }
 
-.check__container .phone-number {
+.input__container .phone-number {
   display: flex;
   align-items: center;
+  border-bottom: 1px solid var(--baemin-gray);
+  margin-bottom: 1rem;
 }
 
-.check__container .phone-number input {
+.input__container .phone-number input {
   flex: 1 1 100%;
 }
 
-.check__container .phone-number .cancle-btn {
+.input__container .phone-number .cancle-btn {
   width: 1rem;
   height: 1rem;
   background-image: url('../images/phone_number_check/cancel-circle.png');
@@ -44,13 +44,18 @@
   display: none;
 }
 
-.check__container .phone-number .check {
+.input__container .phone-number .check {
   width: 1rem;
   height: 1rem;
   background-image: url('../images/phone_number_check/validation-green.png');
   background-repeat: no-repeat;
   background-size: contain;
   display: none;
+}
+
+.auth-number input {
+  border-bottom: 1px solid var(--baemin-gray);
+  margin-bottom: 0.5rem;
 }
 
 .auth-number__request {
@@ -66,7 +71,7 @@
 
 .auth-number__request-re {
   align-self: flex-end;
-  color: #63bfc1;
+  color: var(--baemin-mint);
   font-size: 0.8rem;
   margin-bottom: 1rem;
 }
