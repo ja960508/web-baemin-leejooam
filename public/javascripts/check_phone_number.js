@@ -22,16 +22,31 @@ function processPhoneNumberInput(phoneNumber) {
   return processedPhoneNumber;
 }
 
+function checkPhoneNumberInput(phoneNumber) {
+  const phoneNumberRegExp = /^01[016789]-[0-9]{4}-[0-9]{4}$/;
+
+  if (phoneNumber.length !== 13) {
+    return false;
+  }
+
+  console.log(phoneNumberRegExp.test(phoneNumber));
+
+  if (!phoneNumberRegExp.test(phoneNumber)) {
+    return false;
+  }
+
+  return true;
+}
+
 function setPhoneNumberEvent() {
   const phoneNumber = document.querySelector('#phone-number');
   const cancleBtn = document.querySelector('.cancle-btn');
   const check = document.querySelector('.check');
 
   phoneNumber.addEventListener('input', () => {
-    console.log('??');
     phoneNumber.value = processPhoneNumberInput(phoneNumber.value);
 
-    if (phoneNumber.value.length === 13) {
+    if (checkPhoneNumberInput(phoneNumber.value)) {
       cancleBtn.style.display = 'none';
       check.style.display = 'block';
 
@@ -59,7 +74,7 @@ function setAuthNumberEvent() {
   authRequestBtn.addEventListener('click', async () => {
     const authNumber = document.querySelector('.auth-number');
 
-    if (phoneNumber.value.length !== 13) {
+    if (!checkPhoneNumberInput(phoneNumber.value)) {
       return;
     }
 
