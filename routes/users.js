@@ -15,7 +15,7 @@ router.get('/register/agree-terms', function (req, res, next) {
 });
 
 router.get('/register/check-phone-number', function (req, res, next) {
-  res.render('phone_number_check');
+  res.render('check_phone_number');
 });
 
 module.exports = router;
