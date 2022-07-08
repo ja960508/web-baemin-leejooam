@@ -1,46 +1,56 @@
-(function () {
-  const agreeAllInput = document.querySelector('.agreeAll input');
-  const agreeTermsInput = document.querySelectorAll('.agree input');
+function setAgreeInputEvents() {
+  const agreeAllInput = document.querySelector('.agree--all input');
+  const agreeInputs = document.querySelectorAll('.agree input');
   const essentialInputs = document.querySelectorAll('.essential input');
   const nextBtn = document.querySelector('.next-btn');
-  const form = document.querySelector('.terms-form');
 
   agreeAllInput.addEventListener('click', () => {
     const agreeAllInputState = agreeAllInput.checked;
 
-    agreeTermsInput.forEach((item) => {
+    agreeInputs.forEach((item) => {
       item.checked = agreeAllInputState;
       nextBtn.disabled = !agreeAllInputState;
     });
   });
 
-  agreeTermsInput.forEach((item) =>
+  agreeInputs.forEach((item) =>
     item.addEventListener('click', () => {
-      let allAgreeTermsInputState = true;
+      let allAgreeInputsState = true;
       let nextBtnState = false;
 
-      agreeTermsInput.forEach((input) => {
+      agreeInputs.forEach((input) => {
         if (!input.checked) {
-          allAgreeTermsInputState = false;
+          allAgreeInputsState = false;
+
+          return false;
         }
       });
 
-      agreeAllInput.checked = allAgreeTermsInputState;
+      agreeAllInput.checked = allAgreeInputsState;
 
       essentialInputs.forEach((item) => {
-        console.log(item.checked);
         if (!item.checked) {
           nextBtnState = true;
+
+          return false;
         }
       });
 
       nextBtn.disabled = nextBtnState;
     })
   );
+}
+
+function initAgreeTerms() {
+  setAgreeInputEvents();
+
+  const form = document.querySelector('.agree-terms__form');
 
   form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    location.href = '/users/phone-number-check';
+    location.href = '/users/register/check-phone-number';
   });
-})();
+}
+
+initAgreeTerms();
