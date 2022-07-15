@@ -12,8 +12,8 @@ const getAuthNumber = setTimer(() => {
 function processPhoneNumberInput(phoneNumber) {
   let processedPhoneNumber = phoneNumber;
 
-  processedPhoneNumber = processedPhoneNumber.replace(/[^0-9]/g, '');
-  processedPhoneNumber = processedPhoneNumber.slice(0, 11);
+  processedPhoneNumber = processedPhoneNumber.replace(/[^0-9]/g, ''); // 숫자가 아닌 것들은 모두 제거
+  processedPhoneNumber = processedPhoneNumber.slice(0, 11); // 11자리까지만 허용
   processedPhoneNumber = processedPhoneNumber
     .replace(/[^0-9]/g, '')
     .replace(/^(\d{0,3})(\d{0,4})(\d{0,4})$/g, '$1-$2-$3')
@@ -28,8 +28,6 @@ function checkPhoneNumberInput(phoneNumber) {
   if (phoneNumber.length !== 13) {
     return false;
   }
-
-  console.log(phoneNumberRegExp.test(phoneNumber));
 
   if (!phoneNumberRegExp.test(phoneNumber)) {
     return false;
